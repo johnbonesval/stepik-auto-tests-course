@@ -16,3 +16,9 @@ class ProductPageLocators():
     BOOK_TITLE_ADD_MESSAGE = (By.CSS_SELECTOR, "#messages > div:nth-child(1) strong")
     BASKET_TOTAL_ADD_MESSAGE = (By.CSS_SELECTOR, "#messages > div:nth-child(3) strong")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages")
+
+class SearchPageLocators():
+    TEXT_LINE = (By.CLASS_NAME, "input__box")
+    TEXT_INPUT = (By.ID, "text")
+    SUGGEST_TABLE = (By.TAG_NAME, ".mini-suggest__popup .mini-suggest__popup-content")
+    RIGHT_LINK = (By.TAG_NAME, 'serp-item')
