@@ -30,6 +30,15 @@ class ProductPage(BasePage):
     def should_be_successuful_message(self):
         assert self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "message is not presented"
 
+    def should_not_be_successuful_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
+
+    def is_not_element_present(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
+
+    def is_disappeared(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
+
     def should_be_product_names(self):
         current_price = self.browser.find_element(*ProductPageLocators.BASKET_TOTAL_ADD_MESSAGE).text
         expected_price = self.browser.find_element(*ProductPageLocators.BOOK_PRICE).text
