@@ -25,5 +25,15 @@ class SearchPage(BasePage):
         search.send_keys(Keys.ENTER)
 
     def should_be_link(self):
-        expected_link="tensor.ru"
-        assert self.is_element_present(*SearchPageLocators.RIGHT_LINK), "no right link"
+        expected_link = "tensor.ru"
+        current_link_1 = self.browser.find_element(*SearchPageLocators.RIGHT_LINK1).text
+        current_link_2 = self.browser.find_element(*SearchPageLocators.RIGHT_LINK2).text
+        current_link_3 = self.browser.find_element(*SearchPageLocators.RIGHT_LINK3).text
+        current_link_4 = self.browser.find_element(*SearchPageLocators.RIGHT_LINK4).text
+        current_link_5 = self.browser.find_element(*SearchPageLocators.RIGHT_LINK5).text
+        print(current_link_4)
+        print(current_link_5)
+        assert expected_link in current_link_1, "no right link"
+        assert expected_link in current_link_2, "no right link"
+        assert expected_link in current_link_3, "no right link"
+        assert expected_link in current_link_5, "no right link"

@@ -10,4 +10,5 @@ def test_guest_add_to_basket_product_page(browser, link):
     page.search_da_text()
     page.should_be_search_suggest()
     page.press_enter()
+    page.should_be_link()
     time.sleep(5)
